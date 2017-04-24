@@ -316,7 +316,7 @@
             <!--Second column-->
             <div class="col-md-7">
                 <!--Carousel Wrapper-->
-                <div id="carousel-example-2" class="carousel slide carousel-fade no-flex wow fadeIn" data-wow-delay="0.3s" data-ride="carousel">
+                <div id="carousel-example-2" class="carousel slide carousel-fade no-flex wow fadeIn" data-wow-delay="0.00001s" data-ride="carousel">
                     <!--Indicators-->
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
@@ -834,7 +834,9 @@
         </div>
     </section>
     <!--Section: Contact-->
-
+    <a href="#">
+        <img src="images/scroll.png" class="scrollup">
+    </a>
 
 </div>
 <!--/Main container-->
@@ -976,6 +978,28 @@
 <script>
     new WOW().init();
 </script>
+
+<script>
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+
+    });
+</script>
+
 </body>
 
 </html>

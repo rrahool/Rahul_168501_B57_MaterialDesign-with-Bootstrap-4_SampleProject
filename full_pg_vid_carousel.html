@@ -182,7 +182,9 @@
             </a>    <!--/.Controls-->
         </div>
         <!--/.Carousel Wrapper-->
-
+        <a href="#">
+            <img src="images/scroll.png" class="scrollup">
+        </a>
         <!--Footer-->
         <footer class="page-footer center-on-small-only">
 
@@ -283,6 +285,27 @@
          <!--Animations initialization-->
         <script>
             new WOW().init();
+        </script>
+
+        <script>
+            $(document).ready(function () {
+
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('.scrollup').fadeIn();
+                    } else {
+                        $('.scrollup').fadeOut();
+                    }
+                });
+
+                $('.scrollup').click(function () {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 600);
+                    return false;
+                });
+
+            });
         </script>
     </body>
 
